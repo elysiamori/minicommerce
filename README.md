@@ -219,7 +219,7 @@ To open the documentation and test the API using the Thunder Client extension in
    - Search for "Thunder Client" and click the Install button.
 
 2. **Download the `minicommerce.json` File**:
-   - Ensure you have the `minicommerce.json` file available on your local machine.
+   - Download or copy paste `minicommerce.json` file on your local machine.
 
 3. **Import the Collection into Thunder Client**:
    - Open the Thunder Client extension by clicking on its icon in the Activity Bar.
