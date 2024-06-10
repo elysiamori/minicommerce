@@ -6,7 +6,7 @@
 - PostgreSQL : https://www.postgresql.org/docs/
 - GORM : https://gorm.io/docs/
 
-
+This API is an API about online shopping applications with minimalist features so that this API is made simple, this project was made to fulfill the final project of the mobile programming.
 
 ### MINI-COMMERCE API [DOCS]
 
@@ -110,14 +110,7 @@ Response :
                 }
             }
     ```
-Non-responable :
-- status [404] not found
-- data : 
-    ```json
-            {
-                "message" : "product unavailable"
-            }
-    ```
+    
 #### [DELETE] /api/products/:productID
 Request :
 - description : delete product
@@ -129,14 +122,6 @@ Response :
     ```json
             {
                 "message" : "product successfully deleted"
-            }
-    ```
-Non-responable :
-- status [400] bad request
-- data : 
-    ```json
-            {
-                "message" : "product unavailable"
             }
     ```
 
@@ -183,15 +168,6 @@ Response :
                 "type_product" : "string",
                 "price" : "integer",
                 "stock" : "integer"
-            }
-    ```
-
-Non-responable : 
-- status [404] not found
-- data :
-    ```json
-            {
-                "message" : "product not found"
             }
     ```
 ### Detail product
