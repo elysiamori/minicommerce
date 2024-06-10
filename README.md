@@ -1,4 +1,4 @@
-# Minicommerce API
+# Minicommerce API 🏪
 
 #### Tech Stack
 - Golang : https://go.dev/doc/
