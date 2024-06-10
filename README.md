@@ -7,8 +7,8 @@
 - GORM : https://gorm.io/docs/
 
 #### Library
-- Fiber : go get github.com/gofiber/fiber/v2
-- GORM Postgres : go get gorm.io/gorm gorm.io/driver/postgres
+- Fiber : ```go get github.com/gofiber/fiber/v2```
+- GORM Postgres : ```go get gorm.io/gorm gorm.io/driver/postgres```
 - Validator : go get github.com/go-playground/validator/v10
 - Accounting Format : go get github.com/leekchan/accounting
 - ENV : go get github.com/joho/godotenv
