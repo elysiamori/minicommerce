@@ -1,4 +1,4 @@
-# Minicommerce API 🏪
+# Minicommerce API 🛍
 
 #### Tech Stack 
 - ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=Go&logoColor=white)  Golang : https://go.dev/doc/ 
