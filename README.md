@@ -1,4 +1,7 @@
 # Minicommerce API 🛍
+## Purpose of the api
+
+The purpose of this api is to understand the basic concepts of crud operations in a rest api by implementing a project for an online store. this api was also developed as a final project for a mobile programming course and will be consumed by a flutter-based frontend as part of the project.
 
 #### Tech Stack 
 - Golang : https://go.dev/doc/ 
@@ -12,8 +15,6 @@
 - Validator : ```go get github.com/go-playground/validator/v10```
 - Accounting Format : ```go get github.com/leekchan/accounting```
 - ENV : ```go get github.com/joho/godotenv```
-
-This API is an API about online shopping applications with minimalist features so that this API is made simple, this project was made to fulfill the final project of the mobile programming.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
