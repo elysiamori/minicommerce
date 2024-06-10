@@ -1,12 +1,14 @@
 # Minicommerce API 🏪
 
 #### Tech Stack
-- Golang : https://go.dev/doc/
+- ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=Go&logoColor=white) Golang : https://go.dev/doc/
+- ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=white) PostgreSQL : https://www.postgresql.org/docs/
 - Fiber : https://docs.gofiber.io/
-- PostgreSQL : https://www.postgresql.org/docs/
 - GORM : https://gorm.io/docs/
 
 This API is an API about online shopping applications with minimalist features so that this API is made simple, this project was made to fulfill the final project of the mobile programming.
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### MINI-COMMERCE API [DOCS]
 
