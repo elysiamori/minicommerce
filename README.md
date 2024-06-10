@@ -16,6 +16,8 @@ Key Feature :
 - CRUD product
 - List product
 - Details product
+  
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### Product CRUD
 #### [POST] /api/products
@@ -127,6 +129,8 @@ Response :
             }
     ```
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### List Product 
 #### [GET] /api/list-products
 Request :
@@ -172,6 +176,7 @@ Response :
                 "stock" : "integer"
             }
     ```
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ### Detail product
 #### [GET] /api/list-products/detail-product/productID
 Request : 
