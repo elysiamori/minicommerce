@@ -13,37 +13,7 @@
 - Accounting Format : ```go get github.com/leekchan/accounting```
 - ENV : ```go get github.com/joho/godotenv```
 
-
 This API is an API about online shopping applications with minimalist features so that this API is made simple, this project was made to fulfill the final project of the mobile programming.
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
-# Importing Thunder Client API Documentation
-
-To open the documentation and test the API using the Thunder Client extension in Visual Studio Code, please follow these steps to import the `minicommerce.json` file:
-
-## Steps to Import
-
-1. **Install Thunder Client Extension**:
-   - Open Visual Studio Code.
-   - Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
-   - Search for "Thunder Client" and click the Install button.
-
-2. **Download the `minicommerce.json` File**:
-   - Ensure you have the `minicommerce.json` file available on your local machine.
-
-3. **Import the Collection into Thunder Client**:
-   - Open the Thunder Client extension by clicking on its icon in the Activity Bar.
-   - Click on the "Collections" tab.
-   - Click on the "Import" button.
-   - Select the `minicommerce.json` file from your local machine.
-
-4. **Using the Imported Collection**:
-   - Once imported, you will see the collection in the Thunder Client.
-   - You can now browse through the API requests, execute them, and see the responses.
-
-By following these steps, you will have the API documentation and requests ready to use in Thunder Client, making it easier to interact with the API endpoints provided in the `minicommerce.json` file.
-
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
@@ -234,3 +204,32 @@ Response :
                 "desc" : "string"
             }
     ```
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
+# Importing Thunder Client API Documentation
+
+To open the documentation and test the API using the Thunder Client extension in Visual Studio Code, please follow these steps to import the `minicommerce.json` file:
+
+## Steps to Import
+
+1. **Install Thunder Client Extension**:
+   - Open Visual Studio Code.
+   - Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+   - Search for "Thunder Client" and click the Install button.
+
+2. **Download the `minicommerce.json` File**:
+   - Ensure you have the `minicommerce.json` file available on your local machine.
+
+3. **Import the Collection into Thunder Client**:
+   - Open the Thunder Client extension by clicking on its icon in the Activity Bar.
+   - Click on the "Collections" tab.
+   - Click on the "Import" button.
+   - Select the `minicommerce.json` file from your local machine.
+
+4. **Using the Imported Collection**:
+   - Once imported, you will see the collection in the Thunder Client.
+   - You can now browse through the API requests, execute them, and see the responses.
+
+By following these steps, you will have the API documentation and requests ready to use in Thunder Client, making it easier to interact with the API endpoints provided in the `minicommerce.json` file.
+
