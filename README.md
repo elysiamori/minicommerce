@@ -1,7 +1,6 @@
 # Minicommerce API 🛍
-## Purpose of the api
 
-The purpose of this api is to understand the basic concepts of crud operations in a rest api by implementing a project for an online store. this api was also developed as a final project for a mobile programming course and will be consumed by a flutter-based frontend as part of the project.
+The purpose of this API is to understand the basic concepts of crud operations in a rest api by implementing a project for an online store. this api was also developed as a final project for a mobile programming course and will be consumed by a flutter-based frontend as part of the project.
 
 #### Tech Stack 
 - Golang : https://go.dev/doc/ 
