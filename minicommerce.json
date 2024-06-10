@@ -1,0 +1,206 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "minicommerce",
+    "collectionId": "a211d744-d94b-4299-b642-f74ea7f21f2c",
+    "dateExported": "2024-06-10T09:07:00.110Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "ac9d1c0b-8292-4b7a-a762-766731abbbda",
+            "name": "{minicommerce} | {editor} - crud product",
+            "containerId": "",
+            "created": "2024-05-31T11:28:45.722Z",
+            "sortNum": 5000
+        },
+        {
+            "_id": "da36ee5a-6a2d-4a0a-a90e-e500d3faea07",
+            "name": "{minicommerce} | {content} - search product",
+            "containerId": "",
+            "created": "2024-05-31T11:28:03.136Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "558d712f-729a-437e-80cf-34cc7bd50f7c",
+            "name": "{minicommerce} | {content} - list products",
+            "containerId": "",
+            "created": "2024-05-31T11:29:27.896Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "d382a906-f83d-4639-a3dc-26da31455b28",
+            "name": "{minicommerce} | {content} - detail product ",
+            "containerId": "",
+            "created": "2024-05-31T11:33:44.381Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "c9724c5b-2c30-4f61-bdaa-34e278e81c92",
+            "colId": "a211d744-d94b-4299-b642-f74ea7f21f2c",
+            "containerId": "ac9d1c0b-8292-4b7a-a762-766731abbbda",
+            "name": "{minicommerce} - add product",
+            "url": "http://localhost:3000/api/products",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-31T11:26:47.419Z",
+            "modified": "2024-06-10T09:01:27.458Z",
+            "headers": [
+                {
+                    "name": "img_product",
+                    "value": "multipart/form-data"
+                }
+            ],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "product_name",
+                        "value": "Golang Book"
+                    },
+                    {
+                        "name": "type_product",
+                        "value": ""
+                    },
+                    {
+                        "name": "desc",
+                        "value": "guide book golang for beginner"
+                    },
+                    {
+                        "name": "price",
+                        "value": "5000"
+                    },
+                    {
+                        "name": "stock",
+                        "value": ""
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "img_product",
+                        "value": "c:\\Users\\lenovo\\Downloads\\vueapi.jpg"
+                    }
+                ]
+            },
+            "docs": "#### [POST] /api/products\nRequest :\n- description : add product\n- header : multipart/form-data\n- body :\n```\n    - product_name : string\n    - img_product : byte (uploaded image)\n    - type_product : string\n    - desc : string\n    - price : integer\n    - stock : integer\n ```\n\nResponse :\n- status [201] created\n- data :\n    ```json\n            {\n                \"id\" : \"integer\",\n                \"product_name\" : \"string\",\n                \"img_product\" : \"byte\",\n                \"type_product\" : \"string\",\n                \"desc\" : \"string\",\n                \"price\" : \"integer\",\n                \"stock\" : \"integer\",\n                \"created_at\" : \"date\"\n            }\n    ```"
+        },
+        {
+            "_id": "0f73e5bd-4049-4a9e-92c3-1e3c46ca04fa",
+            "colId": "a211d744-d94b-4299-b642-f74ea7f21f2c",
+            "containerId": "ac9d1c0b-8292-4b7a-a762-766731abbbda",
+            "name": "{minicommerce} - get products",
+            "url": "http://localhost:3000/api/products",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-31T11:26:53.338Z",
+            "modified": "2024-06-10T09:02:09.130Z",
+            "headers": [],
+            "docs": "#### [GET] /api/products\nRequest : \n- description : get all products\n\nResponse :\n- status [200] success\n- data : \n    ```json\n            {\n                [\n                    {\n                        \"id\" : \"integer\",\n                        \"product_name\" : \"string\",\n                        \"img_product\" : \"byte\",\n                        \"type_product\" : \"string\",\n                        \"desc\" : \"string\",\n                        \"price\" : \"integer\",\n                        \"stock\" : \"integer\",\n                    },\n\n                    {\n                        \"id\" : \"integer\",\n                        \"product_name\" : \"string\",\n                        \"img_product\" : \"byte\",\n                        \"type_product\" : \"string\",\n                        \"desc\" : \"string\",\n                        \"price\" : \"integer\",\n                        \"stock\" : \"integer\",\n                    }\n                ]\n            }\n    ```"
+        },
+        {
+            "_id": "bbfc6d4d-723b-4c8f-9278-dc0e9aa4bc50",
+            "colId": "a211d744-d94b-4299-b642-f74ea7f21f2c",
+            "containerId": "ac9d1c0b-8292-4b7a-a762-766731abbbda",
+            "name": "{minicommerce} - update product",
+            "url": "http://localhost:3000/api/products/1",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-05-31T11:27:10.160Z",
+            "modified": "2024-06-10T09:04:13.501Z",
+            "headers": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "product_name",
+                        "value": "Ingfo"
+                    },
+                    {
+                        "name": "type_product",
+                        "value": ""
+                    },
+                    {
+                        "name": "desc",
+                        "value": "Electric Car"
+                    },
+                    {
+                        "name": "price",
+                        "value": "250000"
+                    },
+                    {
+                        "name": "stock",
+                        "value": "1"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "img_product",
+                        "value": "c:\\Users\\lenovo\\Downloads\\jadigini.jpg",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "docs": "###  [PUT] /api/products/:productID\nRequest :\n- description : update product\n- header : multipart/form-data\n- params : productID(integer)\n- body:\n ```\n    - product_name : string\n    - img_product : byte (uploaded image)\n    - type_product : string\n    - desc : string\n    - price : integer\n    - stock : integer\n ```\n   \nResponse :\n- status [200] success\n- data :\n    ```json\n            {\n                \"Product\":{\n                    \"id\" : \"integer\",\n                    \"product_name\" : \"string\",\n                    \"img_product\" : \"byte\",\n                    \"type_product\" : \"string\",\n                    \"desc\" : \"string\",\n                    \"price\" : \"integer\",\n                    \"stock\" : \"integer\",\n                    \"created_at\" : \"date\",\n                    \"updated_at\" : \"date\"\n                }\n            }\n    ```\n"
+        },
+        {
+            "_id": "2dbac918-b717-441a-9399-fece8114d43e",
+            "colId": "a211d744-d94b-4299-b642-f74ea7f21f2c",
+            "containerId": "ac9d1c0b-8292-4b7a-a762-766731abbbda",
+            "name": "{minicommerce} - delete product",
+            "url": "http://localhost:3000/api/products/9",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-05-31T11:27:18.924Z",
+            "modified": "2024-06-10T09:04:51.178Z",
+            "headers": [],
+            "docs": "#### [DELETE] /api/products/:productID\nRequest :\n- description : delete product\n- params : productID\n\nResponse :\n- status [200] success\n- data :\n    ```json\n            {\n                \"message\" : \"product successfully deleted\"\n            }\n    ```"
+        },
+        {
+            "_id": "a25cced3-55d9-43ed-a7db-d8e39275f826",
+            "colId": "a211d744-d94b-4299-b642-f74ea7f21f2c",
+            "containerId": "da36ee5a-6a2d-4a0a-a90e-e500d3faea07",
+            "name": "{minicommerce} - search product",
+            "url": "http://localhost:3000/api/search-products",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-05-31T11:28:18.231Z",
+            "modified": "2024-06-10T09:05:41.599Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"product_name\" : \"wu\",\n  \"type_product\" : \"\"\n}",
+                "form": []
+            },
+            "docs": "#### [POST] /api/search-product\nRequest : \n- description : search product\n- header : application/json\n- body :\n    ```json\n            {\n                \"product_name\" : \"string\",\n                \"type_product\" : \"string\"\n            }\n    ```\n\nResponse :\n- status [200] success\n- data :\n    ```json\n            {\n                \"product_name\" : \"string\",\n                \"img_product\" : \"byte\",\n                \"type_product\" : \"string\",\n                \"price\" : \"integer\",\n                \"stock\" : \"integer\"\n            }\n    ```\n"
+        },
+        {
+            "_id": "be144d25-76ca-4fd1-b7a6-ccb11ea36cb8",
+            "colId": "a211d744-d94b-4299-b642-f74ea7f21f2c",
+            "containerId": "558d712f-729a-437e-80cf-34cc7bd50f7c",
+            "name": "{minicommerce} - list products",
+            "url": "http://localhost:3000/api/list-products",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-05-31T11:31:06.702Z",
+            "modified": "2024-06-10T09:06:28.929Z",
+            "headers": [],
+            "docs": "#### [GET] /api/list-products\nRequest :\n- description : show all product to the menu\n\nResponse :\n- status [200] success\n- data :\n    ```json\n            {\n                \"Products\": [\n                    {\n                        \"id\" : \"integer\",\n                        \"product_name\" : \"string\",\n                        \"img_product\" : \"byte\",\n                        \"type_product\" : \"string\",\n                        \"price\" : \"integer\",\n                        \"stock\" : \"integer\"\n                    }\n                ]\n            }\n    ```\n"
+        },
+        {
+            "_id": "2cc16bcc-5e4a-4cbd-b8e1-ab20f08387f3",
+            "colId": "a211d744-d94b-4299-b642-f74ea7f21f2c",
+            "containerId": "d382a906-f83d-4639-a3dc-26da31455b28",
+            "name": "{minicommerce} - detail product",
+            "url": "http://localhost:3000/api/list-products/detail-product/2",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-05-31T11:33:57.451Z",
+            "modified": "2024-06-10T09:06:52.259Z",
+            "headers": [],
+            "docs": "#### [GET] /api/list-products/detail-product/productID\nRequest : \n- description : detail product\n- params : productID(integer)\n\nResponse :\n- status [200] success\n- data :\n    ```json\n            {\n                \"product_name\" : \"string\",\n                \"img_product\" : \"byte\",\n                \"type_product\" : \"string\",\n                \"price\" : \"integer\",\n                \"stock\" : \"integer\",\n                \"desc\" : \"string\"\n            }\n    ```"
+        }
+    ],
+    "ref": "Y9bEfLZH_5Cgll5Zxke7H8yNRnEvVdugMaxo1IiYZPjuxhCGa88XGq9xnY-zecc5Mh0ZQs3kvY_sVGW0o6ZgGw"
+}
