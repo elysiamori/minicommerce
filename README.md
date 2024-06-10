@@ -28,7 +28,7 @@ Key Feature :
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### Product CRUD
-#### [POST] /api/products
+#### [POST] /api/products  🚀
 Request :
 - description : add product
 - header : multipart/form-data
@@ -57,7 +57,7 @@ Response :
                 "created_at" : "date"
             }
     ```
-#### [GET] /api/products
+#### [GET] /api/products 📩
 Request : 
 - description : get all products
 
@@ -89,7 +89,7 @@ Response :
                 ]
             }
     ```
-###  [PUT] /api/products/:productID
+###  [PUT] /api/products/:productID 📤
 Request :
 - description : update product
 - header : multipart/form-data
@@ -123,7 +123,7 @@ Response :
             }
     ```
     
-#### [DELETE] /api/products/:productID
+#### [DELETE] /api/products/:productID ❌
 Request :
 - description : delete product
 - params : productID
@@ -140,7 +140,7 @@ Response :
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### List Product 
-#### [GET] /api/list-products
+#### [GET] /api/list-products 📃
 Request :
 - description : show all product to the menu
 
@@ -161,7 +161,7 @@ Response :
                 ]
             }
     ```
-#### [POST] /api/search-product
+#### [POST] /api/search-product 🔍
 Request : 
 - description : search product
 - header : application/json
@@ -187,7 +187,7 @@ Response :
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### Detail product
-#### [GET] /api/list-products/detail-product/productID
+#### [GET] /api/list-products/detail-product/productID 📝
 Request : 
 - description : detail product
 - params : productID(integer)
@@ -205,4 +205,3 @@ Response :
                 "desc" : "string"
             }
     ```
-![GOO](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)
