@@ -1,5 +1,13 @@
 # Minicommerce API
 
+#### Tech Stack
+- Golang : https://go.dev/doc/
+- Fiber : https://docs.gofiber.io/
+- PostgreSQL : https://www.postgresql.org/docs/
+- GORM : https://gorm.io/docs/
+
+
+
 ### MINI-COMMERCE API [DOCS]
 
 Key Feature : 
