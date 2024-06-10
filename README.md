@@ -1,8 +1,8 @@
 # Minicommerce API 🏪
 
 #### Tech Stack
-- ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=Go&logoColor=white) Golang : https://go.dev/doc/
-- ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=white) PostgreSQL : https://www.postgresql.org/docs/
+- Golang : https://go.dev/doc/ ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=Go&logoColor=white) 
+- PostgreSQL : https://www.postgresql.org/docs/ ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=white)
 - Fiber : https://docs.gofiber.io/
 - GORM : https://gorm.io/docs/
 
