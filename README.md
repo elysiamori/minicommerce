@@ -9,9 +9,9 @@
 #### Library
 - Fiber : ```go get github.com/gofiber/fiber/v2```
 - GORM Postgres : ```go get gorm.io/gorm gorm.io/driver/postgres```
-- Validator : go get github.com/go-playground/validator/v10
-- Accounting Format : go get github.com/leekchan/accounting
-- ENV : go get github.com/joho/godotenv
+- Validator : ```go get github.com/go-playground/validator/v10```
+- Accounting Format : ```go get github.com/leekchan/accounting```
+- ENV : ```go get github.com/joho/godotenv```
 
 
 This API is an API about online shopping applications with minimalist features so that this API is made simple, this project was made to fulfill the final project of the mobile programming.
