@@ -33,7 +33,7 @@ func Config() (*gorm.DB, error) {
 		dbname:   os.Getenv("PGDATABASE"),
 	}
 
-	dsn := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable", config.user, config.password, config.host, config.port, config.dbname)
+	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", config.host, config.port, config.user, config.password, config.dbname)
 
 	dbs, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
