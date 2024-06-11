@@ -30,7 +30,7 @@ func Config() (*gorm.DB, error) {
 		port:     os.Getenv("PGPORT"),
 		user:     os.Getenv("PGUSER"),
 		password: os.Getenv("PGPASSWORD"),
-		dbname:   os.Getenv("PGDATABSASE"),
+		dbname:   os.Getenv("PGDATABASE"),
 	}
 
 	dsn := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable", config.user, config.password, config.host, config.port, config.dbname)
