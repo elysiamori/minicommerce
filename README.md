@@ -15,6 +15,9 @@ The purpose of this API is to understand the basic concepts of crud operations i
 - Accounting Format : ```go get github.com/leekchan/accounting```
 - ENV : ```go get github.com/joho/godotenv```
 
+### Deployment
+- Database : Railway
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### MINI-COMMERCE API [DOCS]
