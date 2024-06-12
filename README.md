@@ -213,29 +213,29 @@ Response :
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-# Importing Thunder Client API Documentation
+# Importing Postman API Documentation
 
-To open the documentation and test the API using the Thunder Client extension in Visual Studio Code, please follow these steps to import the `minicommerce.json` file:
+# Steps to Import API Documentation into Postman
 
-## Steps to Import
+## 1. Install Postman
+- Download and install Postman from [the official website](https://www.postman.com/downloads/).
+- Follow the installation instructions for your operating system.
 
-1. **Install Thunder Client Extension**:
-   - Open Visual Studio Code.
-   - Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
-   - Search for "Thunder Client" and click the Install button.
+## 2. Download the `minicommerce.json` File
+- Ensure you have the `minicommerce.json` file, download or copied into your local machine.
 
-2. **Download the `minicommerce.json` File**:
-   - Download or copy paste `minicommerce.json` file on your local machine.
+## 3. Import the Collection into Postman
+- Open Postman.
+- Click on the "Import" button in the top left corner of the Postman app.
+- Select the "File" tab.
+- Click on "Choose Files" and select the `minicommerce.json` file from your local machine.
+- Postman will import the collection, and you will see it appear in the Collections sidebar.
 
-3. **Import the Collection into Thunder Client**:
-   - Open the Thunder Client extension by clicking on its icon in the Activity Bar.
-   - Click on the "Collections" tab.
-   - Click on the "Import" button.
-   - Select the `minicommerce.json` file from your local machine.
+## 4. Using the Imported Collection
+- Once imported, you will see the collection in the Collections sidebar.
+- Click on the collection to browse through the API requests.
+- Select any request and click the "Send" button to execute it and view the response.
 
-4. **Using the Imported Collection**:
-   - Once imported, you will see the collection in the Thunder Client.
-   - You can now browse through the API requests, execute them, and see the responses.
+By following these steps, you will have the API documentation and requests ready to use in Postman, making it easier to interact with the API endpoints provided in the `minicommerce.json` file.
 
-By following these steps, you will have the API documentation and requests ready to use in Thunder Client, making it easier to interact with the API endpoints provided in the `minicommerce.json` file.
 
