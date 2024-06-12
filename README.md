@@ -215,23 +215,23 @@ Response :
 
 # Importing Postman API Documentation
 
-# Steps to Import API Documentation into Postman
+### Steps to Import API Documentation into Postman
 
-## 1. Install Postman
+##### 1. Install Postman
 - Download and install Postman from [the official website](https://www.postman.com/downloads/).
 - Follow the installation instructions for your operating system.
 
-## 2. Download the `minicommerce.json` File
+#### 2. Download the `minicommerce.json` File
 - Ensure you have the `minicommerce.json` file, download or copied into your local machine.
 
-## 3. Import the Collection into Postman
+#### 3. Import the Collection into Postman
 - Open Postman.
 - Click on the "Import" button in the top left corner of the Postman app.
 - Select the "File" tab.
 - Click on "Choose Files" and select the `minicommerce.json` file from your local machine.
 - Postman will import the collection, and you will see it appear in the Collections sidebar.
 
-## 4. Using the Imported Collection
+#### 4. Using the Imported Collection
 - Once imported, you will see the collection in the Collections sidebar.
 - Click on the collection to browse through the API requests.
 - Select any request and click the "Send" button to execute it and view the response.
