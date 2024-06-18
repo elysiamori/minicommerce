@@ -103,45 +103,6 @@ func (h *ProductHandlerImpl) AddProduct(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusCreated).JSON(response)
 }
 
-// Add product json
-// func (h *ProductHandlerImpl) AddProductJSON(c *fiber.Ctx) error {
-// 	requests := new(request.ProductAddRequest)
-
-// 	if err := c.BodyParser(requests); err != nil {
-// 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-// 			"message": err.Error(),
-// 		})
-// 	}
-
-// 	// Validation
-// 	validate := validator.New()
-// 	errValidate := validate.Struct(requests)
-// 	if errValidate != nil {
-// 		return c.Status(400).JSON(fiber.Map{
-// 			"message": "failed",
-// 			"error":   errValidate.Error(),
-// 		})
-// 	}
-
-// 	product := models.Products{
-// 		ProductName:  requests.ProductName,
-// 		ImageProduct: requests.ImgProduct,
-// 		TypeProduct:  requests.TypeProduct,
-// 		Description:  requests.Desc,
-// 		Price:        requests.Price,
-// 		Stock:        requests.Stock,
-// 	}
-
-// 	responses, err := h.ProductService.AddProduct(&product)
-// 	if err != nil {
-// 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-// 			"message": err.Error(),
-// 		})
-// 	}
-
-// 	return c.Status(fiber.StatusCreated).JSON(responses)
-// }
-
 // Get product id
 func (h *ProductHandlerImpl) GetProductByID(c *fiber.Ctx) error {
 	id := c.Params("id")
