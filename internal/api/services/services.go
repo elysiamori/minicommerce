@@ -15,6 +15,7 @@ func NewProductServices(productRepo repositories.ProductsRepositoryImpl) *Produc
 	return &ProductServiceImpl{ProductRepo: productRepo}
 }
 
+// Add product services
 func (s *ProductServiceImpl) AddProduct(product *models.Products) (*response.ProductAddResponse, error) {
 	product, err := s.ProductRepo.AddProduct(product)
 	if err != nil {
@@ -35,27 +36,7 @@ func (s *ProductServiceImpl) AddProduct(product *models.Products) (*response.Pro
 	return response, nil
 }
 
-// // Add product services
-// func (s *ProductServiceImpl) AddProduct(product *models.Products) (*response.ProductAddResponse, error) {
-// 	product, err := s.ProductRepo.AddProduct(product)
-// 	if err != nil {
-// 		return nil, err
-// 	}
-
-// 	response := &response.ProductAddResponse{
-// 		ID:          product.ID,
-// 		ProductName: product.ProductName,
-// 		ImgProduct:  product.ImageProduct,
-// 		TypeProduct: product.TypeProduct,
-// 		Desc:        product.Description,
-// 		Price:       product.Price,
-// 		Stock:       product.Stock,
-// 		CreatedAt:   product.CreatedAt.Format("2006-01-02 15:04:05"),
-// 	}
-
-// 	return response, nil
-// }
-
+// Get products id services
 func (s *ProductServiceImpl) GetProductByID(id int) (*models.Products, error) {
 	product, err := s.ProductRepo.GetProductByID(id)
 	if err != nil {
@@ -138,20 +119,21 @@ func (s *ProductServiceImpl) GetAllProduct() ([]response.ProductAllResponse, err
 	return responses, nil
 }
 
+// Update product services
 func (s *ProductServiceImpl) UpdatedProduct(productID uint, newProduct *models.Products) (*response.ProductUpdatedResponse, error) {
-	// Mengambil produk lama
+
 	oldProduct, err := s.ProductRepo.GetProductByID(int(productID))
 	if err != nil {
 		return nil, err
 	}
 
-	// Mengupdate produk menggunakan repository
+	
 	updatedProduct, err := s.ProductRepo.UpdatedProduct(oldProduct, newProduct)
 	if err != nil {
 		return nil, err
 	}
-
-	// Menyusun respons
+	
+	
 	response := &response.ProductUpdatedResponse{
 		ID:          updatedProduct.ID,
 		ProductName: updatedProduct.ProductName,
@@ -165,41 +147,6 @@ func (s *ProductServiceImpl) UpdatedProduct(productID uint, newProduct *models.P
 
 	return response, nil
 }
-
-// // Updated product services
-// func (s *ProductServiceImpl) UpdatedProduct(productID uint, product *request.ProductUpdatedRequest) (*response.ProductUpdatedResponse, error) {
-// 	oldProducts, err := s.ProductRepo.GetProductByID(int(productID))
-// 	if err != nil {
-// 		return nil, err
-// 	}
-
-// 	newProduct := models.Products{
-// 		ProductName:  product.ProductName,
-// 		ImageProduct: product.ImgProduct,
-// 		TypeProduct:  product.TypeProduct,
-// 		Description:  product.Desc,
-// 		Price:        product.Price,
-// 		Stock:        product.Stock,
-// 	}
-
-// 	productUpdated, err := s.ProductRepo.UpdatedProduct(oldProducts, &newProduct)
-// 	if err != nil {
-// 		return nil, err
-// 	}
-
-// 	response := &response.ProductUpdatedResponse{
-// 		ID:          productUpdated.ID,
-// 		ProductName: productUpdated.ProductName,
-// 		ImgProduct:  productUpdated.ImageProduct,
-// 		TypeProduct: productUpdated.TypeProduct,
-// 		Desc:        productUpdated.Description,
-// 		Price:       productUpdated.Price,
-// 		Stock:       product.Stock,
-// 		UpdatedAt:   productUpdated.CreatedAt.Format("2006-01-02 15:04:05"),
-// 	}
-
-// 	return response, nil
-// }
 
 // Deleted prodcuct services
 func (s *ProductServiceImpl) DeletedProduct(productID uint) error {
