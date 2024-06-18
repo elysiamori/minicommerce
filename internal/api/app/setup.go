@@ -16,14 +16,14 @@ func SetupRoutes(app *fiber.App, db *gorm.DB) {
 	productsRepository := repositories.NewProductRepository(db)
 	productService := services.NewProductServices(*productsRepository)
 
-	// untuk mengizinkan CORS
+	// Cors
 	app.Use(cors.New(cors.Config{
 		AllowOrigins: "*",
 		AllowMethods: "*",
 		AllowHeaders: "*",
 	}))
 
-	// untuk menampilkan log
+	// Log API
 	app.Use(logger.New())
 
 	routers.Minicommerce(app, productService)
