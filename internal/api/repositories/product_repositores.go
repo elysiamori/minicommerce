@@ -79,15 +79,6 @@ func (r *ProductsRepositoryImpl) UpdatedProduct(product *models.Products, newPro
 	return product, nil
 }
 
-// func (r *ProductsRepositoryImpl) UpdatedProduct(product *models.Products, newProduct *models.Products) (*models.Products, error) {
-// 	err := r.DB.Model(&product).Updates(newProduct).Error
-// 	if err != nil {
-// 		return nil, err
-// 	}
-
-// 	return product, nil
-// }
-
 // Menghapus product
 func (r *ProductsRepositoryImpl) DeletedProduct(id uint) error {
 	product := models.Products{}
