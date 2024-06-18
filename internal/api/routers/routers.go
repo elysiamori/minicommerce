@@ -13,9 +13,8 @@ func Minicommerce(app *fiber.App, productServices *services.ProductServiceImpl) 
 
 	product := app.Group("/api")
 	{
-		// CRUD product as an editor
+		// CRUD products
 		product.Post("/products", productHandler.AddProduct)
-		// product.Post("/products-json", productHandler.AddProductJSON)
 		product.Get("/products", productHandler.GetAllProduct)
 		product.Get("/products/:id", productHandler.GetProductByID)
 		product.Put("/products/:id", productHandler.UpdatedProduct)
@@ -27,7 +26,7 @@ func Minicommerce(app *fiber.App, productServices *services.ProductServiceImpl) 
 		// List products
 		product.Get("/list-products", productHandler.ListProduct)
 
-		// Get detail product
+		// Get details product
 		product.Get("/list-products/detail-product/:id", productHandler.DetailedProduct)
 	}
 }
