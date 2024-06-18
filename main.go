@@ -17,11 +17,9 @@ func main() {
 	app1 := fiber.New()
 
 	app.SetupRoutes(app1, db)
-
-	// Channel untuk sinyal shutdown
+	
 	done := make(chan bool, 1)
 
-	// Menjalankan server dalam goroutine
 	go func() {
 		if err := app1.Listen(":3000"); err != nil {
 			log.Fatalf("Failed to start server: %v", err)
@@ -29,7 +27,6 @@ func main() {
 		done <- true
 	}()
 
-	// Menunggu sinyal shutdown
 	<-done
 
 }
