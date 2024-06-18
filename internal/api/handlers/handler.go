@@ -263,8 +263,7 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 
 	// Menyusun respons
 	response := &response.ProductUpdatedResponse{
-		ID:          updatedProduct.ID,
-		ProductName: updatedProduct.ProductName,
+		ID:          updatedProduct.ID,		ProductName: updatedProduct.ProductName,
 		ImgProduct:  updatedProduct.ImgProduct,
 		TypeProduct: updatedProduct.TypeProduct,
 		Desc:        updatedProduct.Desc,
@@ -275,51 +274,6 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 
 	return c.Status(fiber.StatusOK).JSON(response)
 }
-
-// Updated product
-// func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
-// 	id := c.Params("id")
-// 	idInt, err := strconv.Atoi(id)
-// 	if err != nil {
-// 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-// 			"message": err.Error(),
-// 		})
-// 	}
-
-// 	requests := new(request.ProductUpdatedRequest)
-// 	err = c.BodyParser(requests)
-
-// 	if err != nil {
-// 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-// 			"message": err.Error(),
-// 		})
-// 	}
-
-// validate := validator.New()
-// 	errValidate := validate.Struct(requests)
-// 	if errValidate != nil {
-// 		return c.Status(400).JSON(fiber.Map{
-// 			"message": "failed",
-// 			"error":   errValidate.Error(),
-// 		})
-// 	}
-
-// 	_, err = h.ProductService.GetProductByID(idInt)
-// 	if err != nil {
-// 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-// 			"message": err.Error(),
-// 		})
-// 	}
-
-// 	productUpdated, err := h.ProductService.UpdatedProduct(uint(idInt), requests)
-// 	if err != nil {
-// 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-// 			"message": err.Error(),
-// 		})
-// 	}
-
-// 	return c.Status(http.StatusOK).JSON(productUpdated)
-// }
 
 // Deleted product
 func (h *ProductHandlerImpl) DeletedProduct(c *fiber.Ctx) error {
