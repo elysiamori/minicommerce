@@ -2,7 +2,7 @@ package request
 
 type ProductAddRequest struct {
 	ProductName string `json:"product_name" validate:"required"`
-	ImgProduct  []byte `json:"img_product" validate:"required"`
+	ImgProduct  []byte `json:"img_product"`
 	TypeProduct string `json:"type_product" validate:"required"`
 	Desc        string `json:"desc" validate:"required"`
 	Price       int    `json:"price" validate:"required"`
@@ -11,7 +11,7 @@ type ProductAddRequest struct {
 
 type ProductUpdatedRequest struct {
 	ProductName string `json:"product_name" validate:"required"`
-	ImgProduct  []byte `json:"img_product" validate:"required"`
+	ImgProduct  []byte `json:"img_product"`
 	TypeProduct string `json:"type_product" validate:"required"`
 	Desc        string `json:"desc" validate:"required"`
 	Price       int    `json:"price" validate:"required"`
