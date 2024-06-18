@@ -26,7 +26,7 @@ func NewProductHandlers(productService services.ProductServiceImpl) *ProductHand
 
 // Add product form
 func (h *ProductHandlerImpl) AddProduct(c *fiber.Ctx) error {
-	// Parsing form data
+	
 	form, err := c.MultipartForm()
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
@@ -34,7 +34,7 @@ func (h *ProductHandlerImpl) AddProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	// Mendapatkan field lain dari form
+	
 	productName := form.Value["product_name"][0]
 	typeProduct := form.Value["type_product"][0]
 	description := form.Value["desc"][0]
@@ -60,7 +60,7 @@ func (h *ProductHandlerImpl) AddProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	// Mendapatkan file gambar
+	
 	file, err := c.FormFile("img_product")
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
@@ -68,7 +68,7 @@ func (h *ProductHandlerImpl) AddProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	// Membaca file gambar sebagai byte array
+
 	imageFile, err := file.Open()
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
@@ -144,7 +144,7 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	// Parsing form data
+	
 	form, err := c.MultipartForm()
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
@@ -152,7 +152,7 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	// Mendapatkan field lain dari form
+	
 	productName := form.Value["product_name"][0]
 	typeProduct := form.Value["type_product"][0]
 	description := form.Value["desc"][0]
@@ -178,11 +178,11 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	// Mendapatkan file gambar, jika ada
+	
 	var imageData []byte
 	file, err := c.FormFile("img_product")
 	if err == nil {
-		// Membaca file gambar sebagai byte array
+		
 		imageFile, err := file.Open()
 		if err != nil {
 			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
@@ -199,7 +199,7 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 		}
 	}
 
-	// Membuat objek produk baru
+	
 	newProduct := models.Products{
 		ProductName: productName,
 		TypeProduct: typeProduct,
@@ -209,12 +209,10 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 	}
 
 	if len(imageData) > 0 {
-		newProduct.ImageProduct = imageData // Menyimpan gambar sebagai byte array jika ada
+		newProduct.ImageProduct = imageData
 	}
 
-	// Create Validate
-
-	// Memperbarui produk
+	
 	updatedProduct, err := h.ProductService.UpdatedProduct(uint(idInt), &newProduct)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
@@ -222,7 +220,7 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	// Menyusun respons
+
 	response := &response.ProductUpdatedResponse{
 		ID:          updatedProduct.ID,		ProductName: updatedProduct.ProductName,
 		ImgProduct:  updatedProduct.ImgProduct,
@@ -268,7 +266,7 @@ func (h *ProductHandlerImpl) DeletedProduct(c *fiber.Ctx) error {
 // Search product
 func (h *ProductHandlerImpl) SearchProduct(c *fiber.Ctx) error {
 
-	// parameter untuk mencari product dalam bentuk json
+	// parameter as a json
 	var searchParams struct {
 		ProductName string `json:"product_name"`
 		TypeProduct string `json:"type_product"`
