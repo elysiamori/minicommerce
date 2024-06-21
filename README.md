@@ -43,6 +43,8 @@ Request :
     - img_product : byte (uploaded image)
     - type_product : string
     - desc : string
+    - sold : int
+    - location : string
     - price : integer
     - stock : integer
  ```
@@ -57,6 +59,8 @@ Response :
                 "img_product" : "byte",
                 "type_product" : "string",
                 "desc" : "string",
+                "sold" : "int",
+                "location" : "string",
                 "price" : "integer",
                 "stock" : "integer",
                 "created_at" : "date"
@@ -78,6 +82,8 @@ Response :
                         "img_product" : "byte",
                         "type_product" : "string",
                         "desc" : "string",
+                        "sold" : "int",
+                        "location" : "string",
                         "price" : "integer",
                         "stock" : "integer",
                     },
@@ -88,6 +94,8 @@ Response :
                         "img_product" : "byte",
                         "type_product" : "string",
                         "desc" : "string",
+                        "sold" : "int",
+                        "location" : "string",
                         "price" : "integer",
                         "stock" : "integer",
                     }
@@ -105,6 +113,8 @@ Request :
     - img_product : byte (uploaded image)
     - type_product : string
     - desc : string
+    - sold : int
+    - location : string
     - price : integer
     - stock : integer
  ```
@@ -120,6 +130,8 @@ Response :
                     "img_product" : "byte",
                     "type_product" : "string",
                     "desc" : "string",
+                    "sold" : "int",
+                    "location" : "string",
                     "price" : "integer",
                     "stock" : "integer",
                     "created_at" : "date",
@@ -160,6 +172,8 @@ Response :
                         "product_name" : "string",
                         "img_product" : "byte",
                         "type_product" : "string",
+                        "sold" : "int",
+                        "location" : "string",
                         "price" : "integer",
                         "stock" : "integer"
                     }
@@ -185,6 +199,8 @@ Response :
                 "product_name" : "string",
                 "img_product" : "byte",
                 "type_product" : "string",
+                "sold" : "int",
+                "location" : "string",
                 "price" : "integer",
                 "stock" : "integer"
             }
@@ -205,6 +221,8 @@ Response :
                 "product_name" : "string",
                 "img_product" : "byte",
                 "type_product" : "string",
+                "sold" : "int",
+                "location" : "string",
                 "price" : "integer",
                 "stock" : "integer",
                 "desc" : "string"
