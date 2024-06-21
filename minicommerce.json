@@ -38,31 +38,41 @@
 							"formdata": [
 								{
 									"key": "product_name",
-									"value": "",
+									"value": "Logooo",
 									"type": "text"
 								},
 								{
 									"key": "img_product",
 									"type": "file",
-									"src": []
+									"src": "csM4VQmrW/mc_logo.jpg"
 								},
 								{
 									"key": "type_product",
-									"value": "",
+									"value": "Logo",
 									"type": "text"
 								},
 								{
 									"key": "desc",
-									"value": "",
+									"value": "logogogoog",
 									"type": "text"
 								},
 								{
 									"key": "price",
-									"value": "",
+									"value": "1000",
 									"type": "text"
 								},
 								{
 									"key": "stock",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "sold",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "location",
 									"value": "",
 									"type": "text"
 								}
@@ -118,6 +128,16 @@
 									"key": "stock",
 									"value": "",
 									"type": "text"
+								},
+								{
+									"key": "sold",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "",
+									"type": "text"
 								}
 							]
 						},
@@ -167,7 +187,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"product_name\" : \"go\",\r\n  \"type_product\" : \"\"\r\n}",
+							"raw": "{\r\n  \"product_name\" : \"\",\r\n  \"type_product\" : \"anime\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
