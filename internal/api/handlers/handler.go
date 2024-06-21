@@ -38,6 +38,8 @@ func (h *ProductHandlerImpl) AddProduct(c *fiber.Ctx) error {
 	productName := form.Value["product_name"][0]
 	typeProduct := form.Value["type_product"][0]
 	description := form.Value["desc"][0]
+	sold, _ := strconv.Atoi(form.Value["sold"][0])
+	location := form.Value["location"][0]
 	price, _ := strconv.Atoi(form.Value["price"][0])
 	stock, _ := strconv.Atoi(form.Value["stock"][0])
 
@@ -45,6 +47,8 @@ func (h *ProductHandlerImpl) AddProduct(c *fiber.Ctx) error {
 		ProductName: productName,
 		TypeProduct: typeProduct,
 		Desc:        description,
+		Sold:        sold,
+		Location:    location,
 		Price:       price,
 		Stock:       stock,
 	}
@@ -88,6 +92,8 @@ func (h *ProductHandlerImpl) AddProduct(c *fiber.Ctx) error {
 		ProductName:  productName,
 		TypeProduct:  typeProduct,
 		Description:  description,
+		Sold:         sold,
+		Location:     location,
 		Price:        price,
 		Stock:        stock,
 		ImageProduct: imageData, // Menyimpan gambar sebagai byte array
@@ -127,6 +133,8 @@ func (h *ProductHandlerImpl) GetProductByID(c *fiber.Ctx) error {
 		TypeProduct: product.TypeProduct,
 		Desc:        product.Description,
 		Price:       helpers.FormatMoney(product.Price),
+		Sold:        product.Sold,
+		Location:    product.Location,
 		Stock:       product.Stock,
 		CreatedAt:   product.CreatedAt.Format("2006-01-02 15:04:05"),
 		UpdatedAt:   product.UpdatedAt.Format("2006-01-02 15:04:05"),
@@ -156,6 +164,8 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 	productName := form.Value["product_name"][0]
 	typeProduct := form.Value["type_product"][0]
 	description := form.Value["desc"][0]
+	sold, _ := strconv.Atoi(form.Value["sold"][0])
+	location := form.Value["location"][0]
 	price, _ := strconv.Atoi(form.Value["price"][0])
 	stock, _ := strconv.Atoi(form.Value["stock"][0])
 
@@ -163,6 +173,8 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 		ProductName: productName,
 		TypeProduct: typeProduct,
 		Desc:        description,
+		Sold:        sold,
+		Location:    location,
 		Price:       price,
 		Stock:       stock,
 	}
@@ -204,6 +216,8 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 		ProductName: productName,
 		TypeProduct: typeProduct,
 		Description: description,
+		Sold:        sold,
+		Location:    location,
 		Price:       price,
 		Stock:       stock,
 	}
@@ -222,10 +236,13 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 
 
 	response := &response.ProductUpdatedResponse{
-		ID:          updatedProduct.ID,		ProductName: updatedProduct.ProductName,
+		ID:          updatedProduct.ID,		
+		ProductName: updatedProduct.ProductName,
 		ImgProduct:  updatedProduct.ImgProduct,
 		TypeProduct: updatedProduct.TypeProduct,
 		Desc:        updatedProduct.Desc,
+		Sold:        updatedProduct.Sold,
+		Location:    updatedProduct.Location,
 		Price:       updatedProduct.Price,
 		Stock:       updatedProduct.Stock,
 		UpdatedAt:   updatedProduct.UpdatedAt,
@@ -329,6 +346,8 @@ func (h *ProductHandlerImpl) DetailedProduct(c *fiber.Ctx) error {
 		ProductName: product.ProductName,
 		ImgProduct:  product.ImageProduct,
 		TypeProduct: product.TypeProduct,
+		Sold:        product.Sold,
+		Location:    product.Location,
 		Price:       helpers.FormatMoney(product.Price),
 		Stock:       product.Stock,
 		Desc:        product.Description,
