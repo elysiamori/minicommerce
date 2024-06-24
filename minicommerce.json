@@ -182,12 +182,15 @@
 			"item": [
 				{
 					"name": "search products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"product_name\" : \"\",\r\n  \"type_product\" : \"anime\"\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -195,13 +198,23 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/api/search-products",
+							"raw": "{{url}}/api/search-products?product_name&type_product=kecantikan",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"search-products"
+							],
+							"query": [
+								{
+									"key": "product_name",
+									"value": null
+								},
+								{
+									"key": "type_product",
+									"value": "kecantikan"
+								}
 							]
 						}
 					},
