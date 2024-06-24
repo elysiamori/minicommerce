@@ -21,7 +21,7 @@ func Minicommerce(app *fiber.App, productServices *services.ProductServiceImpl) 
 		product.Delete("/products/:id", productHandler.DeletedProduct)
 
 		// Seacrh product
-		product.Post("/search-products", productHandler.SearchProduct)
+		product.Get("/search-products", productHandler.SearchProduct)
 
 		// List products
 		product.Get("/list-products", productHandler.ListProduct)
