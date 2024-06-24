@@ -180,17 +180,10 @@ Response :
                 ]
             }
     ```
-#### [POST] /api/search-product 🔍
+#### [GET] /api/search-product 🔍
 Request : 
 - description : search product
-- header : application/json
-- body :
-    ```json
-            {
-                "product_name" : "string",
-                "type_product" : "string"
-            }
-    ```
+- params : query paramaeter (product_name, type_product)
 Response :
 - status [200] success
 - data :
