@@ -283,28 +283,18 @@ func (h *ProductHandlerImpl) DeletedProduct(c *fiber.Ctx) error {
 // Search product
 func (h *ProductHandlerImpl) SearchProduct(c *fiber.Ctx) error {
 
-	// parameter as a json
-	var searchParams struct {
-		ProductName string `json:"product_name"`
-		TypeProduct string `json:"type_product"`
-	}
+	productName := c.Query("product_name")
+	typeProduct := c.Query("type_product")
 
-	err := c.BodyParser(&searchParams)
-	if err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"message": err.Error(),
-		})
-	}
-
-	if searchParams.ProductName == "" && searchParams.TypeProduct == "" {
+	if productName == "" && typeProduct == "" {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"message": "At least one search parameter (product_name or type_product) must be provided",
 		})
 	}
 
-	products, err := h.ProductService.SearchProduct(searchParams.ProductName, searchParams.TypeProduct)
+	products, err := h.ProductService.SearchProduct(productName, typeProduct)
 	if err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
 			"message": "product unavailable",
 		})
 	}
