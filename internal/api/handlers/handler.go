@@ -34,7 +34,6 @@ func (h *ProductHandlerImpl) AddProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	
 	productName := form.Value["product_name"][0]
 	typeProduct := form.Value["type_product"][0]
 	description := form.Value["desc"][0]
@@ -64,28 +63,23 @@ func (h *ProductHandlerImpl) AddProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	
+	var imageData []byte
 	file, err := c.FormFile("img_product")
-	if err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"message": "Failed to get image file",
-		})
-	}
+	if err == nil {
+		imageFile, err := file.Open()
+		if err != nil {
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+				"message": "Failed to open image file",
+			})
+		}
+		defer imageFile.Close()
 
-
-	imageFile, err := file.Open()
-	if err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"message": "Failed to open image file",
-		})
-	}
-	defer imageFile.Close()
-
-	imageData, err := io.ReadAll(imageFile)
-	if err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"message": "Failed to read image file",
-		})
+		imageData, err = io.ReadAll(imageFile)
+		if err != nil {
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+				"message": "Failed to read image file",
+			})
+		}
 	}
 
 	product := models.Products{
@@ -96,7 +90,7 @@ func (h *ProductHandlerImpl) AddProduct(c *fiber.Ctx) error {
 		Location:     location,
 		Price:        price,
 		Stock:        stock,
-		ImageProduct: imageData, // Menyimpan gambar sebagai byte array
+		ImageProduct: imageData, 
 	}
 
 	response, err := h.ProductService.AddProduct(&product)
@@ -152,7 +146,7 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	
+	// Parsing form data
 	form, err := c.MultipartForm()
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
@@ -160,7 +154,6 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	
 	productName := form.Value["product_name"][0]
 	typeProduct := form.Value["type_product"][0]
 	description := form.Value["desc"][0]
@@ -182,19 +175,23 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 	// Validation
 	validate := validator.New()
 	errValidate := validate.Struct(data)
-
 	if errValidate != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"message": "failed",
+			"message": "Validation failed",
 			"error":   errValidate.Error(),
 		})
 	}
 
-	
+	existingProduct, err := h.ProductService.GetProductByID(idInt)
+	if err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"message": "Product not found",
+		})
+	}
+
 	var imageData []byte
 	file, err := c.FormFile("img_product")
 	if err == nil {
-		
 		imageFile, err := file.Open()
 		if err != nil {
 			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
@@ -209,34 +206,30 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 				"message": "Failed to read image file",
 			})
 		}
+	} else {
+		imageData = existingProduct.ImageProduct
 	}
 
-	
 	newProduct := models.Products{
-		ProductName: productName,
-		TypeProduct: typeProduct,
-		Description: description,
-		Sold:        sold,
-		Location:    location,
-		Price:       price,
-		Stock:       stock,
+		ProductName:  productName,
+		TypeProduct:  typeProduct,
+		Description:  description,
+		Sold:         sold,
+		Location:     location,
+		Price:        price,
+		Stock:        stock,
+		ImageProduct: imageData, 
 	}
 
-	if len(imageData) > 0 {
-		newProduct.ImageProduct = imageData
-	}
-
-	
 	updatedProduct, err := h.ProductService.UpdatedProduct(uint(idInt), &newProduct)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"message": "Failed to update product",
 		})
 	}
-
-
+	
 	response := &response.ProductUpdatedResponse{
-		ID:          updatedProduct.ID,		
+		ID:          updatedProduct.ID,
 		ProductName: updatedProduct.ProductName,
 		ImgProduct:  updatedProduct.ImgProduct,
 		TypeProduct: updatedProduct.TypeProduct,
@@ -250,6 +243,7 @@ func (h *ProductHandlerImpl) UpdatedProduct(c *fiber.Ctx) error {
 
 	return c.Status(fiber.StatusOK).JSON(response)
 }
+
 
 // Deleted product
 func (h *ProductHandlerImpl) DeletedProduct(c *fiber.Ctx) error {
